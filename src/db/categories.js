@@ -3,30 +3,30 @@ export default [
     id: 1,
     name: 'Condo Fee',
     type: 'Debit',
-    recurring: true,
+    recurrable: true,
   },
   {
     id: 2,
     name: 'Landscaping',
     type: 'Credit',
-    recurring: true,
+    recurrable: true,
   },
   {
     id: 3,
     name: 'Insurance',
     type: 'Credit',
-    recurring: true,
+    recurrable: true,
   },
   {
     id: 4,
     name: 'Reserve Fund Contribution',
     type: 'Transfer',
-    recurring: true,
+    recurrable: true,
   },
   {
     id: 5,
     name: 'Reimbursment',
     type: 'Credit',
-    recurring: false
+    recurrable: false
   }
 ]
