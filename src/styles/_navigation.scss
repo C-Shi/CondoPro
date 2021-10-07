@@ -1,0 +1,12 @@
+#side-bar {
+  background-color:  $primary-color;
+
+  .nav-item *{
+    color: $secondary-text-color;
+    font-weight: bold;
+
+  }
+  .v-list-item--active {
+    background-color: $active-color;
+  }
+}
