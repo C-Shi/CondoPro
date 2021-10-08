@@ -1,0 +1,30 @@
+#app-bar {
+  #logo {
+    color: $text-color;
+  }
+
+  #avatar {
+    margin-right: 10px;
+  }
+
+  .v-menu__content {
+    left: auto !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .v-list-item {
+    padding: 0;
+    min-width: 200px;
+    display: block;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .v-tab:nth-of-type(1) {
+    margin-left: 0 !important;
+  }
+}
