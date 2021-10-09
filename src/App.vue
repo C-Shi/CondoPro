@@ -1,26 +1,7 @@
 <template>
   <v-app>
-    
-    <v-app-bar
-      v-if="$route.name != 'NotFound'"
-      app
-      color="primary"
-      dark
-      clipped-left
-    >
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="#"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">User Info</span>
-      </v-btn>
-    </v-app-bar>
-    
-    <navigation v-if="$route.name != 'NotFound'" app></navigation>
-  
+    <header-bar></header-bar>
+    <navigation v-if="$route.name != 'NotFound' && $vuetify.breakpoint.mdAndUp" app></navigation>
     <v-main>
       <router-view/>
     </v-main>
@@ -29,12 +10,16 @@
 
 <script>
 
-import Navigation from '@/components/shared/Navigation.vue'
+import HeaderBar from '@/components/shared/HeaderBar.vue';
+import Navigation from '@/components/shared/Navigation.vue';
 export default {
   name: 'App',
   components: {
-    Navigation
-  }
+    HeaderBar, Navigation
+  },
+  data: () => ({
+    //
+  }),
 };
 </script>
 

@@ -1,8 +1,3 @@
-$primary-color: #1976D2;
-$secondary-color: #9F32B2;
-$active-color: #126EC9;
-$primary-text-color: #333333;
-$secondary-text-color: #FFFAFA;
-
-@import '_navigation.scss'
-
+@import './variables.scss';
+@import './header-bar.scss';
+@import './_navigation.scss';
