@@ -1,9 +1,12 @@
 <template>
   <v-app>
+    
     <v-app-bar
+      v-if="$route.name != 'NotFound'"
       app
       color="primary"
       dark
+      clipped-left
     >
       <v-spacer></v-spacer>
 
@@ -15,7 +18,9 @@
         <span class="mr-2">User Info</span>
       </v-btn>
     </v-app-bar>
-
+    
+    <navigation v-if="$route.name != 'NotFound'" app></navigation>
+  
     <v-main>
       <router-view/>
     </v-main>
@@ -24,11 +29,15 @@
 
 <script>
 
+import Navigation from '@/components/shared/Navigation.vue'
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  }),
+  components: {
+    Navigation
+  }
 };
 </script>
+
+<style lang="scss">
+@import "@/styles/style.scss";
+</style>
