@@ -1,18 +1,32 @@
 <template>
-    <v-navigation-drawer app clipped id="side-bar" mobile-breakpoint="768">
+    <v-navigation-drawer app clipped id="side-bar" 
+      :permanent="$vuetify.breakpoint.mdAndUp"
+      :width="width"
+    >
       <v-list nav>
         <v-list-item class="nav-item"
           v-for="item in items"
           :key="item.title"
           :to="item.route"
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+          <template v-if="$vuetify.breakpoint.lgAndUp">
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
+            <v-list-item-content v-if="$vuetify.breakpoint.lgAndUp">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </template>
+
+          <v-tooltip right v-else>
+            <template v-slot:activator="{ on, attrs }">
+              <v-tab color="#FFF" v-bind="attrs" v-on="on">
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-tab>
+            </template>
+            <span>{{ item.title }}</span>
+          </v-tooltip>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -52,6 +66,16 @@ export default {
         }
       ]
     }
-  }
+  },
+  computed: {
+    // a computed getter
+    width: function () {
+      if (this.$vuetify.breakpoint.lgAndUp) {
+        return 256;
+      }
+      return 120;
+    }
+  },
+  
 }
 </script>

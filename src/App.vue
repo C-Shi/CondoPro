@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <header-bar></header-bar>
-    <navigation v-if="$route.name != 'NotFound'" app></navigation>
+    <navigation v-if="$route.name != 'NotFound' && $vuetify.breakpoint.mdAndUp" app></navigation>
     <v-main>
       <router-view/>
     </v-main>

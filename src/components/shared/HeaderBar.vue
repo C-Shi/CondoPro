@@ -68,6 +68,7 @@
             icon: 'mdi-account',
             action: () => {
               console.log('profile')
+              console.log(this.$vuetify.breakpoint)
             }
           },
           {
