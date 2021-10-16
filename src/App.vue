@@ -1,8 +1,9 @@
 <template>
   <v-app>
-    <header-bar></header-bar>
-    <navigation v-if="$route.name != 'NotFound' && $vuetify.breakpoint.mdAndUp" app></navigation>
+    <header-bar />
+    <navigation v-if="$route.name != 'NotFound' && $vuetify.breakpoint.mdAndUp" app />
     <v-main>
+      <bread-crumb />
       <router-view/>
     </v-main>
   </v-app>
@@ -12,14 +13,13 @@
 
 import HeaderBar from '@/components/shared/HeaderBar.vue';
 import Navigation from '@/components/shared/Navigation.vue';
+import BreadCrumb from '@/components/shared/BreadCrumb.vue';
 export default {
   name: 'App',
   components: {
-    HeaderBar, Navigation
+    HeaderBar, Navigation, BreadCrumb
   },
-  data: () => ({
-    //
-  }),
+  
 };
 </script>
 
