@@ -1,0 +1,21 @@
+.user {
+  .v-card {
+    border: 1px solid $primary-color;
+  }
+  .v-card__title.section-header {
+    background-color: $primary-color;
+    color: $text-color;
+  }
+
+  .theme--dark.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: $text-color;
+  }
+
+  .theme--dark.v-label {
+      color: $text-color;
+  }
+
+  .theme--dark.v-icon {
+    color: $text-color
+  }
+}

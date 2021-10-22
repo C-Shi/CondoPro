@@ -1,3 +1,12 @@
 @import './variables.scss';
 @import './header-bar.scss';
 @import './_navigation.scss';
+@import './user.scss';
+
+.text-regular {
+  color: $text-color;
+}
+
+.text-emphasis, .text-emphasis--text {
+  color: $primary-color !important; 
+}
